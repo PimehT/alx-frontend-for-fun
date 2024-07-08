@@ -1,3 +1,11 @@
+# alx-frontend-for-fun
+
+## Description
+
+This is a simple project to code a markdown to html
+converter. It's a project for fun and to learn more
+
+
 # My title
 ## My title2
 # My title3
