@@ -98,8 +98,11 @@ def paragraph(lines):
                         break
                 else:
                     modified_list.append('<br/>\n')
-        
-    if modified_list and not modified_list[-1].endswith(('</p>\n', '</ol>\n', '</ul>\n')):
+
+    if (
+        modified_list and
+        not modified_list[-1].endswith(('</p>\n', '</ol>\n', '</ul>\n'))
+    ):
         modified_list.append('</p>\n')
 
     return modified_list
@@ -113,11 +116,13 @@ def bold_or_emphasis(lines):
 
         line = re.sub(
             r'\[\[(.*?)\]\]',
-            lambda match: hashlib.md5(match.group(1).encode()).hexdigest(), line
+            lambda match: hashlib.md5(match.group(1).encode()).hexdigest(),
+            line
         )
         line = re.sub(
             r'\(\((.*?)\)\)',
-            lambda match: match.group(1).replace('c', '').replace('C', ''), line
+            lambda match: match.group(1).replace('c', '').replace('C', ''),
+            line
         )
         modified_lines.append(line)
     return modified_lines
@@ -125,7 +130,8 @@ def bold_or_emphasis(lines):
 
 def convert_markdown_to_html(markdown_file, output_file):
     if not markdown_file.endswith(".md") or not output_file.endswith(".html"):
-        print("Usage: ./markdown2html.py README.md README.html")
+        print("Usage: ./markdown2html.py README.md README.html",
+              file=sys.stderr)
         sys.exit(1)
 
     try:
@@ -148,7 +154,8 @@ def convert_markdown_to_html(markdown_file, output_file):
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print("Usage: ./markdown2html.py README.md README.html")
+        print("Usage: ./markdown2html.py README.md README.html",
+              file=sys.stderr)
         sys.exit(1)
 
     markdown_file = sys.argv[1]
