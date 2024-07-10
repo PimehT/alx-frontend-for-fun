@@ -140,7 +140,7 @@ def convert_markdown_to_html(markdown_file, output_file):
         with open(output_file, 'w') as o:
             o.writelines(modified_lines)
     except FileNotFoundError:
-        print(f"Missing {markdown_file}")
+        print(f"Missing {markdown_file}", file=sys.stderr)
         sys.exit(1)
 
     sys.exit(0)
