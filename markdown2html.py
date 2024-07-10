@@ -125,7 +125,7 @@ def bold_or_emphasis(lines):
 
 def convert_markdown_to_html(markdown_file, output_file):
     if not markdown_file.endswith(".md") or not output_file.endswith(".html"):
-        print("Usage: ./markdown2html.py README.md README.html" file=sys.stderr)
+        print("Usage: ./markdown2html.py README.md README.html")
         sys.exit(1)
 
     try:
@@ -140,7 +140,7 @@ def convert_markdown_to_html(markdown_file, output_file):
         with open(output_file, 'w') as o:
             o.writelines(modified_lines)
     except FileNotFoundError:
-        print(f"Missing {markdown_file}", file=sys.stderr)
+        print(f"Missing {markdown_file}")
         sys.exit(1)
 
     sys.exit(0)
@@ -148,7 +148,7 @@ def convert_markdown_to_html(markdown_file, output_file):
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Usage: ./markdown2html.py README.md README.html" file=sys.stderr)
+        print("Usage: ./markdown2html.py README.md README.html")
         sys.exit(1)
 
     markdown_file = sys.argv[1]
