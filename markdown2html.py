@@ -147,7 +147,7 @@ def convert_markdown_to_html(markdown_file, output_file):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
+    if len(sys.argv) < 3:
         print("Usage: ./markdown2html.py README.md README.html")
         sys.exit(1)
 
