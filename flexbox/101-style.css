@@ -1,0 +1,59 @@
+:root {
+  --font-size-small: 1rem;
+  --font-size-medium: 2rem;
+  --font-size-large: 4rem;
+  --length-small: 5rem;
+  --length-medium: 8rem;
+  --length-large: 12rem;
+  --height-small: 3rem;
+  --height-medium: 5rem;
+  --height-large: 8rem;
+}
+
+.container {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.box {
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box1, .box5 {
+  font-size: var(--font-size-small);
+  width: var(--length-small);
+  height: var(--height-small);
+}
+
+.box2, .box4 {
+  font-size: var(--font-size-medium);
+  width: var(--length-medium);
+  height: var(--height-medium);
+}
+
+.box1 {
+  background-color: #2EC06C;
+}
+
+.box2 {
+  background-color: #2D92D5;
+}
+
+.box3 {
+  background-color: #344A61;
+  font-size: var(--font-size-large);
+  width: var(--length-large);
+  height: var(--height-large);
+}
+
+.box4 {
+  background-color: #9B57B6;
+}
+
+.box5 {
+  background-color: #EA7D01;
+}
