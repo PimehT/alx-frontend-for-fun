@@ -15,9 +15,23 @@ if [[ ! -f "$src-styles.css" ]]; then
     exit 1
 fi
 
+# Check if src-index.html is a file
+if [[ ! -f "$src-index.html" ]]; then
+    echo "Error: $src-index.html is not a file"
+    exit 1
+fi
+
 # Check if des-style.css already exists
 if [[ -f "$des-styles.css" ]]; then
     read -p "$des-styles.css already exists, are you sure? (y/n): " response
+    if [[ "$response" != "y" ]]; then
+        exit 1
+    fi
+fi
+
+# Check if des-index.html already exists
+if [[ -f "$des-index.html" ]]; then
+    read -p "$des-index.html already exists, are you sure? (y/n): " response
     if [[ "$response" != "y" ]]; then
         exit 1
     fi
