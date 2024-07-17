@@ -37,9 +37,18 @@ if [[ -f "$des-index.html" ]]; then
     fi
 fi
 
+# Check if des-article.html already exists
+if [[ -f "$des-article.html" ]]; then
+    read -p "$des-article.html already exists, are you sure? (y/n): " response
+    if [[ "$response" != "y" ]]; then
+        exit 1
+    fi
+fi
+
 # Copy src-style.css to des-style.css
 cp "$src-styles.css" "$des-styles.css"
 # cp "$src-index.html" "$des-index.html"
+cp "$src-article.html" "$des-article.html"
 
 # Replace line 11 of index.html
 sed -i "10s/${src}/${des}/" $des-article.html
