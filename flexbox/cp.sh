@@ -42,4 +42,4 @@ cp "$src-styles.css" "$des-styles.css"
 # cp "$src-index.html" "$des-index.html"
 
 # Replace line 11 of index.html
-sed -i "10s/${src}/${des}/" article.html
+sed -i "10s/${src}/${des}/" $des-article.html
