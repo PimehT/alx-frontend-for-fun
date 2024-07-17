@@ -580,6 +580,7 @@ ul.row {
   padding: 0 0.5rem;
   font-size: var(--font-size-small);
   color: var(--color-grey);
+  text-align: center;
 }
 
 .post-aside {
