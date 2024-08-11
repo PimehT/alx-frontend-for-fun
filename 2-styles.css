@@ -1,0 +1,86 @@
+/* Basic toggle structure */
+.toggle {
+  margin: 0 auto;
+  position: relative;
+  width: 70px;
+  height: 25px;
+}
+
+.toggle input {
+  display: none;
+}
+
+/* Style the toggle label */
+.toggle-label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+}
+
+/* Inner part of the toggle, showing "Yes" or "No" */
+.toggle-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.toggle-switch {
+  position: absolute;
+  top: calc(50% - 20px);
+  left: calc(0% - 27px);
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 1px solid #999;
+  border-radius: 50%;
+  transition: left 0.3s ease;
+}
+
+/* When the checkbox is checked */
+.toggle-cb:checked + .toggle-label .toggle-inner {
+  color: white;
+}
+
+.toggle-cb:checked + .toggle-label {
+  background-color: #E02241;
+  border: 1px solid #999;
+}
+
+.toggle-cb:checked + .toggle-label .toggle-switch {
+  left: calc(100% - 27px);
+}
+
+/* When the checkbox is not checked */
+.toggle-cb:not(:checked) + .toggle-label {
+  border: 1px solid #999;
+}
+
+.toggle-cb:not(:checked) + .toggle-label .toggle-switch {
+  left: calc(0% - 17px);
+}
+
+/* Content for inner toggle text */
+.toggle-cb:checked + .toggle-label .toggle-inner::before {
+  content: "Yes";
+  padding-right: 20px;
+}
+
+.toggle-cb:not(:checked) + .toggle-label .toggle-inner::before {
+  content: "No";
+  padding-left: 20px;
+}
