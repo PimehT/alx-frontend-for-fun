@@ -1,0 +1,100 @@
+/* nav container */
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40px;
+}
+
+/* input checkbox */
+.menu-open {
+  display: none;
+}
+
+/* label for input */
+.menu-open-button, .menu-open:checked ~ .menu-open-button {
+  border: 1px solid #E02241;
+  background-color: #E02241;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-open-button .menu-line {
+  width: 10px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #fff;
+  margin: 1px 0;
+}
+
+/* when label is hovered over */
+.menu-open-button:hover {
+  width: 35px;
+  height: 35px;
+  transform: scale3d(1.1, 1.1, 1);
+  transform-origin: center;
+  transition: transform 0.3s ease-out;
+}
+
+/* menu items */
+.menu-item {
+  margin: 0 0 10px 0;
+  width: 20px;
+  height: 20px;
+  background-color: #E02241;
+  border: 1px solid #E02241;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+a.menu-item {
+  text-decoration: none;
+}
+
+.fa {
+  background-color: #E02241;
+  color: #fff;
+  font-size: 10px;
+}
+
+.menu-item:hover {
+  background-color: #fff;
+  color: #E02241;
+  .fa {
+    color: #E02241;
+    background-color: #fff;
+  }
+}
+
+/* when menu-open-button is not checked, do not display menu-item */
+.menu-open:not(:checked) ~ .menu-item {
+  display: none;
+}
+
+/* when menu-open-button is checked, display menu-item */
+.menu-open:checked ~ .menu-open-button {
+  .menu-line-2 {
+    display: none;
+  }
+  .menu-line-1 {
+    transform-origin: center;
+    transform: rotate(45deg) translate(14%, 86%);
+    transition: transform 0.3s ease-out;
+  }
+  .menu-line-3 {
+    transform-origin: center;
+    transform: rotate(-45deg) translate(9%, -62%);
+    transition: transform 0.3s ease-out;
+  }
+}
