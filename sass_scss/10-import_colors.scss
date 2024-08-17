@@ -1,5 +1,5 @@
-/* Using @use to import other scss files */
-@use '10-colors';
+/* Using @import to import other scss files */
+@import '10-colors';
 
 .red {
   color: $red;
